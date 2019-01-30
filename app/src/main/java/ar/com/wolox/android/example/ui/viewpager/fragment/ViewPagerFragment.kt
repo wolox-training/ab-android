@@ -13,8 +13,10 @@ import javax.inject.Inject
 
 class ViewPagerFragment @Inject constructor() : WolmoFragment<BasePresenter<Any>>() {
 
-    @Inject internal lateinit var page1Fragment: RandomFragment
-    @Inject internal lateinit var page2Fragment: RequestFragment
+    @Inject
+    internal lateinit var page1Fragment: RandomFragment
+    @Inject
+    internal lateinit var page2Fragment: RequestFragment
     private lateinit var fragmentPagerAdapter: SimpleFragmentPagerAdapter
 
     override fun layout(): Int = R.layout.fragment_viewpager

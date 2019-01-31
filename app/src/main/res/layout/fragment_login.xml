@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imagenfondo"
+        android:id="@+id/background"
         android:layout_width="fill_parent"
         android:layout_height="180dp"
         android:scaleType="centerCrop"
@@ -17,11 +17,11 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imagenwolox"
+        android:id="@+id/wolox_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/wolox_logo_large"
-        app:layout_constraintBottom_toBottomOf="@id/blanco"
+        app:layout_constraintBottom_toBottomOf="@id/white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -29,47 +29,47 @@
         tools:ignore="MissingConstraints" />
 
     <View
-        android:id="@+id/blanco"
+        android:id="@+id/white"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="8dp"
         android:alpha="0"
         android:background="#FFFFFF"
-        app:layout_constraintTop_toBottomOf="@id/imagenfondo"/>
+        app:layout_constraintTop_toBottomOf="@id/background"/>
 
     <EditText
-        android:id="@+id/editText_first_name"
+        android:id="@+id/edittext_first_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="First Name (recomended)"
         android:textSize="@dimen/font_medium_extra"
         android:paddingBottom="@dimen/font_medium_extra"
-        app:layout_constraintTop_toBottomOf="@id/blanco"
+        app:layout_constraintTop_toBottomOf="@id/white"
         android:layout_margin="16dp"/>
 
     <EditText
-        android:id="@+id/last_name"
+        android:id="@+id/edittextlast_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Last Name (recomended)"
         android:textSize="@dimen/font_medium_extra"
         android:paddingBottom="@dimen/font_medium_extra"
-        app:layout_constraintTop_toBottomOf="@id/editText_first_name"
+        app:layout_constraintTop_toBottomOf="@id/edittext_first_name"
         android:layout_margin="16dp"/>
 
     <Button
-        android:id="@+id/vLoginButton"
+        android:id="@+id/login_button"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_margin="16dp"
-        app:layout_constraintTop_toBottomOf="@id/last_name"
+        app:layout_constraintTop_toBottomOf="@id/edittextlast_name"
         android:textSize="@dimen/font_medium_extra"
         android:text="LOG IN"
         android:background="#FFFFFF"
         android:shadowColor="#A3000000"/>
 
     <Button
-        android:id="@+id/signup"
+        android:id="@+id/signup_button"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_margin="16dp"
@@ -81,6 +81,7 @@
         android:shadowColor="#A3000000"/>
 
     <TextView
+        android:id="@+id/terms_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

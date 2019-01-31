@@ -87,6 +87,8 @@
         android:gravity="center"
         android:text="@string/terms"
         android:textSize="@dimen/font_medium_extra"
-        app:layout_constraintBottom_toBottomOf="parent"></TextView>
+        app:layout_constraintBottom_toBottomOf="parent">
+        
+    </TextView>
 
 </android.support.constraint.ConstraintLayout>

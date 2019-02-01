@@ -44,6 +44,10 @@
     <dimen name="font_large_extra">20sp</dimen>
     <dimen name="font_big">22sp</dimen>
     <dimen name="font_huge">24sp</dimen>
+    <dimen name="image_view_height">180dp</dimen>
+    <dimen name="view_height">60dp</dimen>
+    <dimen name="margin">16dp</dimen>
+    <dimen name="button_height">40dp</dimen>
 
     <!-- Add your custom dimens here -->
 </resources>

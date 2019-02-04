@@ -6,6 +6,7 @@ import ar.com.wolox.wolmo.core.activity.WolmoActivity;
 /**
  *
  */
+
 public class LoginActivity extends WolmoActivity {
 
     @Override

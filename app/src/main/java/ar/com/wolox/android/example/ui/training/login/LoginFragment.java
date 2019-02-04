@@ -14,10 +14,11 @@ import butterknife.BindView;
  * LoginFragment is used for user to Login
  */
 public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILoginView {
-    @BindView(R.id.edittext_email) EditText editTextEmail;
-    @BindView(R.id.edittext_password) EditText editTextPassword;
-    @BindView(R.id.login_button) Button loginButton;
-    @BindView(R.id.signup_button) Button signupButton;
+
+    @BindView(R.id.login_email_edittext) EditText mEmailEditText;
+    @BindView(R.id.login_email_password) EditText mPasswordEditText;
+    @BindView(R.id.login_button) Button mLoginButton;
+    @BindView(R.id.signup_button) Button mSignupButton;
 
     @Override
     public int layout() {
@@ -27,16 +28,15 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void init() {
-        SharedPreferences sp1 = getContext().getSharedPreferences(getString(R.string.login), 0);
-        String pemail = sp1.getString(getString(R.string.email), null);
-        String ppass = sp1.getString(getString(R.string.password), null);
-        editTextEmail.setText(pemail);
-        editTextPassword.setText(ppass);
-
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        SharedPreferences sharedPreferences = getContext().getSharedPreferences(getString(R.string.login), 0);
+        String sharedPreferencesEmail = sharedPreferences.getString(getString(R.string.key_email), null);
+        String sharedPreferencesPassword = sharedPreferences.getString(getString(R.string.key_password), null);
+        mEmailEditText.setText(sharedPreferencesEmail);
+        mEmailEditText.setText(sharedPreferencesPassword);
+        mLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getPresenter().validateFields(editTextEmail.getText().toString(), editTextPassword.getText().toString());
+                getPresenter().validateFields(mEmailEditText.getText().toString(), mPasswordEditText.getText().toString());
             }
         });
     }
@@ -48,26 +48,25 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
 
     @Override
     public void loginSuccesful() {
-        SharedPreferences sp = getContext().getSharedPreferences(getString(R.string.login), 0);
-        SharedPreferences.Editor editor = sp.edit();
-        editor.putString(getString(R.string.email), editTextEmail.getText().toString());
-        editor.putString(getString(R.string.password), editTextPassword.getText().toString());
+        SharedPreferences sharedPreferences = getContext().getSharedPreferences(getString(R.string.login), 0);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(getString(R.string.key_email), mEmailEditText.getText().toString());
+        editor.putString(getString(R.string.key_password), mPasswordEditText.getText().toString());
         editor.commit();
     }
 
     @Override
     public void incompletePassword() {
-        editTextPassword.setError(getString(R.string.mandatory_fields));
+        mPasswordEditText.setError(getString(R.string.mandatory_fields));
     }
 
     @Override
     public void incompleteEmail() {
-        editTextEmail.setError(getString(R.string.mandatory_fields));
+        mEmailEditText.setError(getString(R.string.mandatory_fields));
     }
 
     @Override
     public void incorrectEmail() {
-        editTextEmail.setError(getString(R.string.example_email));
+        mEmailEditText.setError(getString(R.string.example_email));
     }
-
 }

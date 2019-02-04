@@ -37,25 +37,25 @@
         app:layout_constraintTop_toBottomOf="@id/background" />
 
     <EditText
-        android:id="@+id/edittext_email"
+        android:id="@+id/login_email_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin"
-        android:hint="@string/email"
+        android:hint="@string/key_email"
         android:paddingBottom="@dimen/font_medium_extra"
         android:textSize="@dimen/font_medium_extra"
         app:layout_constraintTop_toBottomOf="@id/white" />
 
     <EditText
-        android:id="@+id/edittext_password"
+        android:id="@+id/login_email_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin"
-        android:hint="@string/password"
+        android:hint="@string/key_password"
         android:paddingBottom="@dimen/font_medium_extra"
         android:password="true"
         android:textSize="@dimen/font_medium_extra"
-        app:layout_constraintTop_toBottomOf="@id/edittext_email" />
+        app:layout_constraintTop_toBottomOf="@id/login_email_edittext" />
 
     <Button
         android:id="@+id/login_button"
@@ -66,7 +66,7 @@
         android:shadowColor="@color/grey"
         android:text="@string/log_in"
         android:textSize="@dimen/font_medium_extra"
-        app:layout_constraintTop_toBottomOf="@id/edittext_password" />
+        app:layout_constraintTop_toBottomOf="@id/login_email_password" />
 
     <Button
         android:id="@+id/signup_button"

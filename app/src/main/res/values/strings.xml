@@ -14,14 +14,12 @@
     <string name="fragment_example_login">Login</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="terms">By joining you agree to our <u>Terms &amp; Conditions</u></string>
-
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
+    <string name="key_email">Email</string>
+    <string name="key_password">Password</string>
     <string name="login">Login</string>
     <string name="mandatory_fields">All fields are mandatory</string>
     <string name="example_email">Incorrect email format. A correct format is \'example@domain.com\'</string>
-
     <string name="log_in">LOG IN</string>
     <string name="sign_up">SIGN UP</string>
 </resources>

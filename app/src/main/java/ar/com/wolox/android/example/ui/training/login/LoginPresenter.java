@@ -4,10 +4,10 @@ import android.util.Patterns;
 import javax.inject.Inject;
 import ar.com.wolox.wolmo.core.presenter.BasePresenter;
 
-    /**
+/**
  * LoginPresenter is used for user to Login
  */
-    public class LoginPresenter extends BasePresenter<ILoginView> {
+public class LoginPresenter extends BasePresenter<ILoginView> {
 
     @Inject
     public LoginPresenter() {

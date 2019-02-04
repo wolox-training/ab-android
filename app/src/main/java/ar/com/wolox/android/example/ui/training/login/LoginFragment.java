@@ -36,7 +36,8 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
         mLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getPresenter().validateFields(mEmailEditText.getText().toString(), mPasswordEditText.getText().toString());
+                getPresenter().validateFields(mEmailEditText.getText().toString(),
+                        mPasswordEditText.getText().toString());
             }
         });
     }

@@ -55,19 +55,13 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
     }
 
     @Override
-    public void incompleteFields(String s) {
-        if (getString(R.string.a).equals(s)) {
-            editTextEmail.setError(getString(R.string.mandatory_fields));
-        } else {
-            if (getString(R.string.b).equals(s)) {
-                editTextPassword.setError(getString(R.string.mandatory_fields));
-            } else {
-                if (getString(R.string.c).equals(s)) {
-                    editTextEmail.setError(getString(R.string.mandatory_fields));
-                    editTextPassword.setError(getString(R.string.mandatory_fields));
-                }
-            }
-        }
+    public void incompletePassword() {
+        editTextPassword.setError(getString(R.string.mandatory_fields));
+    }
+
+    @Override
+    public void incompleteEmail() {
+        editTextEmail.setError(getString(R.string.mandatory_fields));
     }
 
     @Override

@@ -40,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin"
-        android:hint="Email"
+        android:hint="@string/email"
         android:paddingBottom="@dimen/font_medium_extra"
         android:textSize="@dimen/font_medium_extra"
         app:layout_constraintTop_toBottomOf="@id/white" />
@@ -50,7 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin"
-        android:hint="Password"
+        android:hint="@string/password"
         android:paddingBottom="@dimen/font_medium_extra"
         android:password="true"
         android:textSize="@dimen/font_medium_extra"
@@ -63,7 +63,7 @@
         android:layout_margin="@dimen/margin"
         android:background="@color/white"
         android:shadowColor="@color/grey"
-        android:text="LOG IN"
+        android:text="@string/log_in"
         android:textSize="@dimen/font_medium_extra"
         app:layout_constraintTop_toBottomOf="@id/edittext_password" />
 
@@ -74,7 +74,7 @@
         android:layout_margin="@dimen/margin"
         android:background="@color/lightblue"
         android:shadowColor="@color/black"
-        android:text="SIGN UP"
+        android:text="@string/sign_up"
         android:textColor="@color/white"
         android:textSize="@dimen/font_medium_extra"
         app:layout_constraintTop_toBottomOf="@id/login_button" />

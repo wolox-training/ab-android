@@ -10,10 +10,6 @@ import ar.com.wolox.wolmo.core.presenter.BasePresenter;
 
 public class LoginPresenter extends BasePresenter<ILoginView> {
 
-    private static final int EMAIL_EMPTY = 0;
-    private static final int PASSWORD_EMPTY = 1;
-    private static final int EMAIL_PASSWORD_EMPTY = 2;
-
     @Inject
     public LoginPresenter() {
     }
@@ -23,8 +19,8 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
      * @param password Password to validate.
      */
     public void validateFields(String email, String password) {
-        if ("".equals(email) || "".equals(password)) {
-            getView().incompleteFields(validateCompleteFields(email, password));
+        if (email.isEmpty() || password.isEmpty()) {
+            validateCompleteFields(email, password);
         } else if (!validateEmail(email)) {
             getView().incorrectEmail();
         } else {
@@ -35,19 +31,17 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
     /**
      * @param email Email to validate.
      * @param password Password to validate
-     * @return String value.
      */
-    public String validateCompleteFields(String email, String password) {
-        if (email.isEmpty() && "".equals(password)) {
-            return "c";
+    public void validateCompleteFields(String email, String password) {
+        if (email.isEmpty() && password.isEmpty()) {
+            getView().incompleteEmail();
+            getView().incompletePassword();
         } else {
-            if ("".equals(email) && !"".equals(password)) {
-                return "a";
+            if (email.isEmpty() && !password.isEmpty()) {
+                getView().incompleteEmail();
             } else {
-                if (!"".equals(email) && "".equals(password)) {
-                    return "b";
-                } else {
-                    return "d";
+                if (!email.isEmpty() && password.isEmpty()) {
+                    getView().incompletePassword();
                 }
             }
         }

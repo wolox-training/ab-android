@@ -5,6 +5,7 @@ package ar.com.wolox.android.example.ui.training.login;
 public interface ILoginView {
 
     void loginSuccesful();
-    void incompleteFields(String s);
+    void incompletePassword();
+    void incompleteEmail();
     void incorrectEmail();
 }

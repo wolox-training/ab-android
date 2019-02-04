@@ -24,4 +24,7 @@
     <string name="a">a</string>
     <string name="b">b</string>
     <string name="c">c</string>
+    <string name="log_in">LOG IN</string>
+    <string name="sign_up">SIGN UP</string>
+
 </resources>

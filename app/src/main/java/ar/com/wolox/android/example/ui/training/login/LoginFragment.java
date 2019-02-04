@@ -18,6 +18,7 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
     @BindView(R.id.edittext_password) EditText editTextPassword;
     @BindView(R.id.login_button) Button loginButton;
     @BindView(R.id.signup_button) Button signupButton;
+
     @Override
     public int layout() {
         return R.layout.fragment_login;
@@ -68,4 +69,5 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
     public void incorrectEmail() {
         editTextEmail.setError(getString(R.string.example_email));
     }
+
 }

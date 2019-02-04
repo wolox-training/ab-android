@@ -10,6 +10,10 @@ import ar.com.wolox.wolmo.core.presenter.BasePresenter;
 
 public class LoginPresenter extends BasePresenter<ILoginView> {
 
+    private static final int EMAIL_EMPTY = 0;
+    private static final int PASSWORD_EMPTY = 1;
+    private static final int EMAIL_PASSWORD_EMPTY = 2;
+
     @Inject
     public LoginPresenter() {
     }
@@ -34,7 +38,7 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
      * @return String value.
      */
     public String validateCompleteFields(String email, String password) {
-        if ("".equals(email) && "".equals(password)) {
+        if (email.isEmpty() && "".equals(password)) {
             return "c";
         } else {
             if ("".equals(email) && !"".equals(password)) {

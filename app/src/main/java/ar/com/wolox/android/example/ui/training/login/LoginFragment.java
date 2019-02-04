@@ -6,8 +6,6 @@ import android.support.annotation.RequiresApi;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-
 import ar.com.wolox.android.R;
 import ar.com.wolox.wolmo.core.fragment.WolmoFragment;
 import butterknife.BindView;
@@ -50,29 +48,26 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
     @Override
     public void loginSuccesful() {
         SharedPreferences sp = getContext().getSharedPreferences(getString(R.string.login), 0);
-        SharedPreferences.Editor ed = sp.edit();
-        ed.putString(getString(R.string.email), editTextEmail.getText().toString());
-        ed.putString(getString(R.string.password), editTextPassword.getText().toString());
-        ed.commit();
-        Toast.makeText(getContext(), "OK", Toast.LENGTH_SHORT).show();
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString(getString(R.string.email), editTextEmail.getText().toString());
+        editor.putString(getString(R.string.password), editTextPassword.getText().toString());
+        editor.commit();
     }
 
     @Override
     public void incompleteFields(String s) {
-        if ("a".equals(s)) {
+        if (getString(R.string.a).equals(s)) {
             editTextEmail.setError(getString(R.string.mandatory_fields));
         } else {
-            if ("b".equals(s)) {
+            if (getString(R.string.b).equals(s)) {
                 editTextPassword.setError(getString(R.string.mandatory_fields));
             } else {
-                if ("c".equals(s)) {
+                if (getString(R.string.c).equals(s)) {
                     editTextEmail.setError(getString(R.string.mandatory_fields));
                     editTextPassword.setError(getString(R.string.mandatory_fields));
                 }
             }
-
         }
-        //       Toast.makeText(getContext(), "All fields are mandatory", Toast.LENGTH_SHORT).show();
     }
 
     @Override

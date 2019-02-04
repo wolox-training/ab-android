@@ -41,6 +41,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin"
         android:hint="@string/email"
+        android:paddingBottom="@dimen/font_medium_extra"
+        android:textSize="@dimen/font_medium_extra"
         app:layout_constraintTop_toBottomOf="@id/white" />
 
 

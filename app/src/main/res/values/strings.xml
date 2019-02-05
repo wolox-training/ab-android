@@ -19,9 +19,10 @@
     <string name="password">Password</string>
     <string name="key_email">key_email</string>
     <string name="key_password">key_password</string>
-    <string name="login">Login</string>
+    <string name="key_login">key_login</string>
     <string name="mandatory_fields">All fields are mandatory</string>
     <string name="example_email">Incorrect email format. A correct format is \'example@domain.com\'</string>
     <string name="log_in">LOG IN</string>
     <string name="sign_up">SIGN UP</string>
+    <string name="home_page">Home Page</string>
 </resources>

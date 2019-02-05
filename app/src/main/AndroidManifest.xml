@@ -19,7 +19,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".example.ui.training.homePage.HomePageActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".example.ui.training.signUp.SignUpActivity"
+            android:screenOrientation="portrait">
+        </activity>
 
     </application>
+
 
 </manifest>

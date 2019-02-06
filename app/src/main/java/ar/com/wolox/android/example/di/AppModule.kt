@@ -2,11 +2,10 @@ package ar.com.wolox.android.example.di
 
 import ar.com.wolox.android.example.ui.training.homePage.HomePageActivity
 import ar.com.wolox.android.example.ui.training.homePage.HomePageFragment
-import ar.com.wolox.android.example.ui.training.login.LoginActivity
-import ar.com.wolox.android.example.ui.training.login.LoginFragment
 import ar.com.wolox.android.example.ui.training.signUp.SignUpActivity
 import ar.com.wolox.android.example.ui.training.signUp.SignUpFragment
-
+import ar.com.wolox.android.example.ui.training.login.LoginActivity
+import ar.com.wolox.android.example.ui.training.login.LoginFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

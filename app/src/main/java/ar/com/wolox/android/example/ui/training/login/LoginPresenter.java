@@ -1,8 +1,17 @@
 package ar.com.wolox.android.example.ui.training.login;
 
+import android.support.annotation.Nullable;
 import android.util.Patterns;
+
+import java.util.List;
+
 import javax.inject.Inject;
+import ar.com.wolox.android.example.model.User;
+import ar.com.wolox.android.example.network.LoginService;
 import ar.com.wolox.wolmo.core.presenter.BasePresenter;
+import ar.com.wolox.wolmo.networking.retrofit.RetrofitServices;
+import ar.com.wolox.wolmo.networking.retrofit.callback.NetworkCallback;
+import okhttp3.ResponseBody;
 
 /**
  * LoginPresenter is used for user to Login
@@ -10,7 +19,11 @@ import ar.com.wolox.wolmo.core.presenter.BasePresenter;
 public class LoginPresenter extends BasePresenter<ILoginView> {
 
     @Inject
-    public LoginPresenter() {
+    RetrofitServices mRetrofitServices;
+
+    @Inject
+    public LoginPresenter(RetrofitServices retrofitServices) {
+        mRetrofitServices = retrofitServices;
     }
 
     /**
@@ -23,7 +36,7 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
         } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             getView().incorrectEmail();
         } else {
-            getView().loginSuccesful();
+            validateLoginToRest(email, password);
         }
     }
 
@@ -44,5 +57,34 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
                 }
             }
         }
+    }
+
+    /**
+     *
+     * @param email email to validate to rest
+     * @param password password to validate to rest
+     */
+    public void validateLoginToRest(String email, String password) {
+        mRetrofitServices.getService(LoginService.class).getUserByEmail(email).enqueue(new NetworkCallback<List<User>>() {
+
+            @Override
+            public void onResponseSuccessful(@Nullable List<User> users) {
+                if (users.get(0).getPassword().equals(password)) {
+                    getView().loginSuccesful();
+                } else {
+                    getView().incorrectPassword();
+                }
+            }
+
+            @Override
+            public void onResponseFailed(@Nullable ResponseBody responseBody, int i) {
+                getView().userNotFound(responseBody);
+            }
+
+            @Override
+            public void onCallFailure(Throwable throwable) {
+                getView().callFailure();
+            }
+        });
     }
 }

@@ -25,4 +25,6 @@
     <string name="log_in">LOG IN</string>
     <string name="sign_up">SIGN UP</string>
     <string name="home_page">Home Page</string>
+    <string name="incorrect_password">Password is incorrect</string>
+    <string name="email_not_found">Email not found.</string>
 </resources>

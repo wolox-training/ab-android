@@ -2,9 +2,7 @@ package ar.com.wolox.android.example.ui.training.login;
 
 import android.support.annotation.Nullable;
 import android.util.Patterns;
-
 import java.util.List;
-
 import javax.inject.Inject;
 import ar.com.wolox.android.example.model.User;
 import ar.com.wolox.android.example.network.LoginService;
@@ -65,8 +63,8 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
      * @param password password to validate to rest
      */
     public void validateLoginToRest(String email, String password) {
-        mRetrofitServices.getService(LoginService.class).getUserByEmail(email).enqueue(new NetworkCallback<List<User>>() {
 
+        mRetrofitServices.getService(LoginService.class).getUserByEmail(email).enqueue(new NetworkCallback<List<User>>() {
             @Override
             public void onResponseSuccessful(@Nullable List<User> users) {
                 if (users.get(0).getPassword().equals(password)) {

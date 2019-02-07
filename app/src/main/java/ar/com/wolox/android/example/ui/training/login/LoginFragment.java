@@ -13,7 +13,6 @@ import ar.com.wolox.android.example.ui.training.homePage.HomePageActivity;
 import ar.com.wolox.android.example.ui.training.signUp.SignUpActivity;
 import ar.com.wolox.wolmo.core.fragment.WolmoFragment;
 import butterknife.BindView;
-import okhttp3.ResponseBody;
 
 /**
  * LoginFragment is used for user to Login
@@ -103,9 +102,8 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
     }
 
     @Override
-    public void userNotFound(ResponseBody responseBody) {
+    public void userNotFound() {
         mEmailEditText.setError(getString(R.string.email_not_found));
-        Toast.makeText(getActivity(), responseBody.toString(), Toast.LENGTH_LONG).show();
     }
 
     @Override

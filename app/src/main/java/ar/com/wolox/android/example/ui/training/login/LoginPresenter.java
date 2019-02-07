@@ -67,16 +67,21 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
         mRetrofitServices.getService(LoginService.class).getUserByEmail(email).enqueue(new NetworkCallback<List<User>>() {
             @Override
             public void onResponseSuccessful(@Nullable List<User> users) {
-                if (users.get(0).getPassword().equals(password)) {
-                    getView().loginSuccesful();
+                if (users.size() == 0) {
+                    getView().userNotFound();
                 } else {
-                    getView().incorrectPassword();
+                    if (users.get(0).getPassword().equals(password)) {
+                        getView().loginSuccesful();
+                    } else {
+                        getView().incorrectPassword();
+                    }
                 }
+
             }
 
             @Override
             public void onResponseFailed(@Nullable ResponseBody responseBody, int i) {
-                getView().userNotFound(responseBody);
+                getView().userNotFound();
             }
 
             @Override

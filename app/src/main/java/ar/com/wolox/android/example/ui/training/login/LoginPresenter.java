@@ -63,7 +63,7 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
      * @param password password to validate to rest
      */
     public void validateLoginToRest(String email, String password) {
-
+        getView().showProgressBar();
         mRetrofitServices.getService(LoginService.class).getUserByEmail(email).enqueue(new NetworkCallback<List<User>>() {
             @Override
             public void onResponseSuccessful(@Nullable List<User> users) {
@@ -76,7 +76,6 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
                         getView().incorrectPassword();
                     }
                 }
-
             }
 
             @Override
@@ -86,8 +85,9 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
 
             @Override
             public void onCallFailure(Throwable throwable) {
-                getView().callFailure();
+                getView().notInternet();
             }
         });
+        getView().hideProgressBar();
     }
 }

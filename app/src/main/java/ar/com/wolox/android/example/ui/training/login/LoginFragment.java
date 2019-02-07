@@ -7,6 +7,7 @@ import android.support.annotation.RequiresApi;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 import ar.com.wolox.android.R;
 import ar.com.wolox.android.example.ui.training.homePage.HomePageActivity;
@@ -23,6 +24,7 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
     @BindView(R.id.login_email_password) EditText mPasswordEditText;
     @BindView(R.id.login_button) Button mLoginButton;
     @BindView(R.id.signup_button) Button mSignupButton;
+    @BindView(R.id.progress_loader) ProgressBar mProgressBar;
 
     @Override
     public int layout() {
@@ -107,7 +109,18 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
     }
 
     @Override
-    public void callFailure() {
-        Toast.makeText(getActivity(), getString(R.string.call_failure), Toast.LENGTH_SHORT).show();
+    public void notInternet() {
+        Toast.makeText(getActivity(), getString(R.string.no_internet), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showProgressBar() {
+        mProgressBar = new ProgressBar(getActivity());
+        mProgressBar.setVisibility(getView().VISIBLE);
+    }
+
+    @Override
+    public void hideProgressBar() {
+        mProgressBar.setVisibility(getView().INVISIBLE);
     }
 }

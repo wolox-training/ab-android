@@ -7,6 +7,7 @@ import android.support.annotation.RequiresApi;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 import ar.com.wolox.android.R;
 import ar.com.wolox.android.example.ui.training.homePage.HomePageActivity;
 import ar.com.wolox.android.example.ui.training.signUp.SignUpActivity;
@@ -93,5 +94,20 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
     @Override
     public void incorrectEmail() {
         mEmailEditText.setError(getString(R.string.example_email));
+    }
+
+    @Override
+    public void incorrectPassword() {
+        mPasswordEditText.setError(getString(R.string.incorrect_password));
+    }
+
+    @Override
+    public void userNotFound() {
+        mEmailEditText.setError(getString(R.string.email_not_found));
+    }
+
+    @Override
+    public void callFailure() {
+        Toast.makeText(getActivity(), getString(R.string.call_failure), Toast.LENGTH_SHORT).show();
     }
 }

@@ -108,6 +108,6 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
 
     @Override
     public void callFailure() {
-        Toast.makeText(getActivity(), "Call Failure", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), getString(R.string.call_failure), Toast.LENGTH_SHORT).show();
     }
 }

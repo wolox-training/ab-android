@@ -27,5 +27,6 @@
     <string name="home_page">Home Page</string>
     <string name="incorrect_password">Password is incorrect</string>
     <string name="email_not_found">Email not found.</string>
+    <string name="call_failure">Call Failure</string>
 
 </resources>

@@ -22,8 +22,7 @@ public class RootActivity extends WolmoActivity {
 
     protected String mEmail;
     protected String mPassword;
-    @Inject
-    protected RetrofitServices mRetrofitServices;
+    @Inject protected RetrofitServices mRetrofitServices;
 
     @Override
     protected int layout() {
@@ -55,35 +54,35 @@ public class RootActivity extends WolmoActivity {
             @Override
             public void onResponseSuccessful(@Nullable List<User> users) {
                 if (users.size() == 0) {
-                    callLogIn();
+                    goToLogIn();
                 } else {
                     if (users.get(0).getPassword().equals(password)) {
-                        callHomePage();
+                        goToHomePage();
                     } else {
-                        callLogIn();
+                        goToLogIn();
                     }
                 }
             }
 
             @Override
             public void onResponseFailed(@Nullable ResponseBody responseBody, int i) {
-                callLogIn();
+                goToLogIn();
             }
 
             @Override
             public void onCallFailure(Throwable throwable) {
-                callLogIn();
+                goToLogIn();
             }
         });
     }
 
-    public void callLogIn() {
+    public void goToLogIn() {
         Intent intent = new Intent(this, LoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 
-    public void callHomePage() {
+    public void goToHomePage() {
         Intent intent = new Intent(this, HomePageActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);

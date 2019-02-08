@@ -25,8 +25,7 @@
     <string name="log_in">LOG IN</string>
     <string name="sign_up">SIGN UP</string>
     <string name="home_page">Home Page</string>
-    <string name="incorrect_password">Password is incorrect</string>
-    <string name="email_not_found">Email not found.</string>
+    <string name="incorrect_email_password">The Email address or Password is incorrect</string>
     <string name="call_failure">Call Failure</string>
     <string name="no_internet">No internet connection</string>
 

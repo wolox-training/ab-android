@@ -22,6 +22,7 @@ public class RootActivity extends WolmoActivity {
 
     protected String mEmail;
     protected String mPassword;
+
     @Inject protected RetrofitServices mRetrofitServices;
 
     @Override

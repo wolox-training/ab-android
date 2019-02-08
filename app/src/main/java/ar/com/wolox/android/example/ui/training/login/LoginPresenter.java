@@ -68,26 +68,27 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
             @Override
             public void onResponseSuccessful(@Nullable List<User> users) {
                 if (users.size() == 0) {
-                    getView().userNotFound();
+                    getView().incorrectEmailPassword();
                 } else {
                     if (users.get(0).getPassword().equals(password)) {
                         getView().loginSuccesful();
                     } else {
-                        getView().incorrectPassword();
+                        getView().incorrectEmailPassword();
                     }
                 }
+                getView().hideProgressBar();
             }
 
             @Override
             public void onResponseFailed(@Nullable ResponseBody responseBody, int i) {
-                getView().userNotFound();
+                getView().hideProgressBar();
             }
 
             @Override
             public void onCallFailure(Throwable throwable) {
+                getView().hideProgressBar();
                 getView().notInternet();
             }
         });
-        getView().hideProgressBar();
     }
 }

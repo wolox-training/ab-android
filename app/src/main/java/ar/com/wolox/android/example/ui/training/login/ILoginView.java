@@ -9,8 +9,7 @@ public interface ILoginView {
     void incompletePassword();
     void incompleteEmail();
     void incorrectEmail();
-    void incorrectPassword();
-    void userNotFound();
+    void incorrectEmailPassword();
     void notInternet();
     void showProgressBar();
     void hideProgressBar();

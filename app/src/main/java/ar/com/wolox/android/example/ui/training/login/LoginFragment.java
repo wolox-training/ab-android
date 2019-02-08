@@ -99,13 +99,8 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
     }
 
     @Override
-    public void incorrectPassword() {
-        mPasswordEditText.setError(getString(R.string.incorrect_password));
-    }
-
-    @Override
-    public void userNotFound() {
-        mEmailEditText.setError(getString(R.string.email_not_found));
+    public void incorrectEmailPassword() {
+        Toast.makeText(getContext(), getString(R.string.incorrect_email_password), Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -115,12 +110,11 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
 
     @Override
     public void showProgressBar() {
-        mProgressBar = new ProgressBar(getActivity());
         mProgressBar.setVisibility(getView().VISIBLE);
     }
 
     @Override
     public void hideProgressBar() {
-        mProgressBar.setVisibility(getView().INVISIBLE);
+        mProgressBar.setVisibility(getView().GONE);
     }
 }

@@ -11,5 +11,7 @@ public interface ILoginView {
     void incorrectEmail();
     void incorrectPassword();
     void userNotFound();
-    void callFailure();
+    void notInternet();
+    void showProgressBar();
+    void hideProgressBar();
 }

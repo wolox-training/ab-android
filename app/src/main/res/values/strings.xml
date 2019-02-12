@@ -29,5 +29,6 @@
     <string name="call_failure">Call Failure</string>
     <string name="no_internet">No internet connection</string>
     <string name="wolox">Wolox</string>
+    <string name="profile_fragment">Profile Fragment</string>
 
 </resources>

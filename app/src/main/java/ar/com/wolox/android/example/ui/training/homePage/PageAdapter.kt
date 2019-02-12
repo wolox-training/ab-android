@@ -3,6 +3,7 @@ package ar.com.wolox.android.example.ui.training.homePage
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
+import ar.com.wolox.android.example.ui.training.homePage.news.NewsFragment
 
 class PageAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager) {
 

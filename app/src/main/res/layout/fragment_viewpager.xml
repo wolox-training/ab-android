@@ -8,7 +8,7 @@
     <LinearLayout
         android:id="@+id/topPanel"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="@dimen/logo_mini"
         android:orientation="horizontal"
         android:layout_marginTop="@dimen/spacing_large"
         android:layout_marginLeft="@dimen/spacing_large"
@@ -16,15 +16,15 @@
         tools:ignore="MissingConstraints">
 
         <ImageView
-            android:layout_width="56dp"
-            android:layout_height="56dp"
+            android:layout_width="@dimen/logo_mini"
+            android:layout_height="@dimen/logo_mini"
             android:src="@drawable/wolox_logo" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="@dimen/font_medium"
+            android:layout_marginLeft=  "@dimen/font_medium"
             android:text="@string/wolox"
             android:textColor="@color/black"
             android:textSize="@dimen/font_huge"

@@ -16,10 +16,10 @@ class HomePageViewPagerFragment @Inject constructor() : WolmoFragment<BasePresen
     override fun layout(): Int = ar.com.wolox.android.R.layout.fragment_viewpager
 
     override fun init() {
-        fragmentPagerAdapter = PageAdapter(activity!!.supportFragmentManager)
+        fragmentPagerAdapter = PageAdapter(requireActivity().supportFragmentManager)
         pager.adapter = fragmentPagerAdapter
         tabs.setupWithViewPager(pager)
-        tabs.getTabAt(0)?.setIcon(R.drawable.news_selector)
-        tabs.getTabAt(1)?.setIcon(R.drawable.profile_selector)
+        tabs.getTabAt(PageAdapter.NEWS_FRAGMENT)?.setIcon(R.drawable.news_selector)
+        tabs.getTabAt(PageAdapter.PROFILE_FRAGMENT)?.setIcon(R.drawable.profile_selector)
     }
 }

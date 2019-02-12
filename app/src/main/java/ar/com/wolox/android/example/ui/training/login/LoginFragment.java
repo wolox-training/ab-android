@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 import ar.com.wolox.android.R;
-import ar.com.wolox.android.example.ui.training.homePage.HomePageActivity;
+import ar.com.wolox.android.example.ui.training.homePage.HomePageViewPagerFragment;
 import ar.com.wolox.android.example.ui.training.signUp.SignUpActivity;
 import ar.com.wolox.wolmo.core.fragment.WolmoFragment;
 import butterknife.BindView;
@@ -78,7 +78,7 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
         mPasswordEditText.setText(sharedPreferencesPassword);
     }
     public void intentHomePage() {
-        Intent intent = new Intent(getContext(), HomePageActivity.class);
+        Intent intent = new Intent(getContext(), HomePageViewPagerFragment.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }

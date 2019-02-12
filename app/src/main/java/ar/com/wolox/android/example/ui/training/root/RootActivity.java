@@ -8,7 +8,7 @@ import javax.inject.Inject;
 import ar.com.wolox.android.R;
 import ar.com.wolox.android.example.model.User;
 import ar.com.wolox.android.example.network.LoginService;
-import ar.com.wolox.android.example.ui.training.homePage.HomePageActivity;
+import ar.com.wolox.android.example.ui.training.homePage.HomePageViewPagerActivity;
 import ar.com.wolox.android.example.ui.training.login.LoginActivity;
 import ar.com.wolox.wolmo.core.activity.WolmoActivity;
 import ar.com.wolox.wolmo.networking.retrofit.RetrofitServices;
@@ -84,7 +84,7 @@ public class RootActivity extends WolmoActivity {
     }
 
     public void goToHomePage() {
-        Intent intent = new Intent(this, HomePageActivity.class);
+        Intent intent = new Intent(this, HomePageViewPagerActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }

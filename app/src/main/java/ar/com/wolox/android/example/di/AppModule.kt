@@ -1,7 +1,7 @@
 package ar.com.wolox.android.example.di
 
-import ar.com.wolox.android.example.ui.training.homePage.HomePageActivity
-import ar.com.wolox.android.example.ui.training.homePage.HomePageFragment
+import ar.com.wolox.android.example.ui.training.homePage.HomePageViewPagerFragment
+import ar.com.wolox.android.example.ui.training.homePage.HomePageViewPagerActivity
 import ar.com.wolox.android.example.ui.training.signUp.SignUpActivity
 import ar.com.wolox.android.example.ui.training.signUp.SignUpFragment
 import ar.com.wolox.android.example.ui.training.login.LoginActivity
@@ -23,10 +23,10 @@ abstract class AppModule {
     internal abstract fun loginFragment(): LoginFragment
 
     @ContributesAndroidInjector
-    internal abstract fun homePageActivity(): HomePageActivity
+    internal abstract fun homePageActivity(): HomePageViewPagerFragment
 
     @ContributesAndroidInjector
-    internal abstract fun homePageFragment(): HomePageFragment
+    internal abstract fun homePageFragment(): HomePageViewPagerActivity
 
     @ContributesAndroidInjector
     internal abstract fun signUpActivity(): SignUpActivity

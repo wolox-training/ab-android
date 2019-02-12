@@ -28,5 +28,6 @@
     <string name="incorrect_email_password">The Email address or Password is incorrect</string>
     <string name="call_failure">Call Failure</string>
     <string name="no_internet">No internet connection</string>
+    <string name="wolox">Wolox</string>
 
 </resources>

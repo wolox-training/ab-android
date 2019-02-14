@@ -26,7 +26,7 @@
         </activity>
 
         <activity
-            android:name=".example.ui.training.homePage.HomePageActivity"
+            android:name=".example.ui.training.homePage.HomePageViewPagerActivity"
             android:screenOrientation="portrait">
         </activity>
 

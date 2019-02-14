@@ -2,6 +2,7 @@ package ar.com.wolox.android.example;
 
 import android.support.annotation.NonNull;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.gson.FieldNamingPolicy;
 import com.readystatesoftware.chuck.ChuckInterceptor;
 import com.squareup.leakcanary.LeakCanary;
@@ -21,6 +22,7 @@ public class TrainingApplication extends WolmoApplication {
 
     @Override
     public void onInit() {
+        Fresco.initialize(this);
         if (LeakCanary.isInAnalyzerProcess(this)) {
             // This process is dedicated to LeakCanary for heap analysis.
             // You should not init your app in this process.

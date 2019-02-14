@@ -30,5 +30,8 @@
     <string name="no_internet">No internet connection</string>
     <string name="wolox">Wolox</string>
     <string name="profile_fragment">Profile Fragment</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="_15_min">15 min</string>
 
 </resources>

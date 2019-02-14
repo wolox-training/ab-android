@@ -101,6 +101,10 @@ buildscript {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
+    //Fresco
+    implementation 'com.facebook.fresco:fresco:1.12.1'
+
+
     //RecyclerView
     implementation 'com.android.support:recyclerview-v7:28.0.0'
 

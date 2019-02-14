@@ -34,14 +34,14 @@
     <android.support.design.widget.TabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/static_spacing_huge"
         android:minHeight="?attr/actionBarSize"
         app:layout_constraintTop_toBottomOf="@+id/topPanel"
         app:tabSelectedTextColor="@color/colorAccent"
         app:tabTextColor="@color/grey" />
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/pager"
+        android:id="@+id/vViewPagerPager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/tabs" />

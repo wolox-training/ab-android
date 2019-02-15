@@ -24,7 +24,7 @@ abstract class ViewPagerActivityModule {
     internal abstract fun viewpagerFragment(): HomePageViewPagerFragment
 
     @ContributesAndroidInjector
-    internal abstract fun randomFragment(): NewsFragment
+    internal abstract fun newsFragment(): NewsFragment
 
     @ContributesAndroidInjector
     internal abstract fun profileFragment(): ProfileFragment

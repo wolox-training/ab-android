@@ -14,8 +14,6 @@ import ar.com.wolox.android.example.ui.training.homePage.news.NewsFragment
  */
 class HomePageViewPagerFragment @Inject constructor() : WolmoFragment<BasePresenter<Any>>() {
 
-//    private lateinit var fragmentPagerAdapter: PageAdapter
-
     @Inject lateinit var mNewsFragment: NewsFragment
     @Inject lateinit var mProfileFragment: ProfileFragment
     private lateinit var mFragmentPagerAdapter: SimpleFragmentPagerAdapter
@@ -23,6 +21,7 @@ class HomePageViewPagerFragment @Inject constructor() : WolmoFragment<BasePresen
     override fun layout(): Int = ar.com.wolox.android.R.layout.fragment_viewpager
 
     override fun init() {
+
         mFragmentPagerAdapter = SimpleFragmentPagerAdapter(childFragmentManager)
         mFragmentPagerAdapter.addFragments(
                 Pair(mNewsFragment, getString(R.string.news)),
@@ -31,7 +30,12 @@ class HomePageViewPagerFragment @Inject constructor() : WolmoFragment<BasePresen
 
         vViewPagerPager.adapter = mFragmentPagerAdapter
         tabs.setupWithViewPager(vViewPagerPager)
-        tabs.getTabAt(0)?.setIcon(R.drawable.news_selector)
-        tabs.getTabAt(1)?.setIcon(R.drawable.profile_selector)
+        tabs.getTabAt(Companion.NEWS_FRAGMENT)?.setIcon(R.drawable.news_selector)
+        tabs.getTabAt(Companion.PROFILE_FRAGMENT)?.setIcon(R.drawable.profile_selector)
+    }
+
+    companion object {
+        const val NEWS_FRAGMENT = 0
+        const val PROFILE_FRAGMENT = 1
     }
 }

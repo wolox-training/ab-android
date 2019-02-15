@@ -8,7 +8,7 @@ import javax.inject.Inject
 /**
  *
  */
-class HomePageViewPagerActivity @Inject constructor() : WolmoActivity() {
+class HomePageViewPagerActivity : WolmoActivity() {
 
     @Inject internal lateinit var lazyViewpagerFragment: Lazy<HomePageViewPagerFragment>
 

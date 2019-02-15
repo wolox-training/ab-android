@@ -25,10 +25,6 @@ public class News {
         return text;
     }
 
-    public News(String title) {
-        this.title = title;
-    }
-
     public void setLike(boolean like) {
         this.like = like;
     }

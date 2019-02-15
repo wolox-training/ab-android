@@ -9,8 +9,9 @@ import javax.inject.Inject
  * LoginFragment is used for user to Login
  */
 class ProfileFragment @Inject constructor() : WolmoFragment<BasePresenter<Any>>() {
-    override fun layout(): Int = R.layout.profile_fragment_page
 
     override fun init() {
     }
+
+    override fun layout(): Int = ar.com.wolox.android.R.layout.profile_fragment_page
 }

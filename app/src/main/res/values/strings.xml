@@ -34,5 +34,7 @@
     <string name="description">Description</string>
     <string name="_15_min">15 min</string>
     <string name="no_news">No more news to show</string>
+    <string name="news">News</string>
+    <string name="profile">Profile</string>
 
 </resources>

@@ -35,7 +35,7 @@ class NewsFragment @Inject constructor() : WolmoFragment<BasePresenter<Any>>() {
 
         viewManager = LinearLayoutManager(context)
         viewAdapter = RecyclerAdapter(news)
-        vSwipeRefreshLayout.setOnRefreshListener {
+            vSwipeRefreshLayout.setOnRefreshListener {
             if (count>0) {
                 news.addAll(news)
                 viewAdapter.notifyDataSetChanged()

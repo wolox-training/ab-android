@@ -25,8 +25,8 @@ class HomePageViewPagerFragment @Inject constructor() : WolmoFragment<BasePresen
     override fun init() {
         mFragmentPagerAdapter = SimpleFragmentPagerAdapter(childFragmentManager)
         mFragmentPagerAdapter.addFragments(
-                Pair(mNewsFragment, "News"),
-                Pair(mProfileFragment, "Profile")
+                Pair(mNewsFragment, getString(R.string.news)),
+                Pair(mProfileFragment, getString(R.string.profile))
         )
 
         vViewPagerPager.adapter = mFragmentPagerAdapter

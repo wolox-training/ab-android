@@ -2,6 +2,7 @@ package ar.com.wolox.android.example.ui.training.homePage.news
 
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.widget.Toast
 import ar.com.wolox.android.R
 import ar.com.wolox.android.example.model.News
 import ar.com.wolox.wolmo.core.fragment.WolmoFragment
@@ -18,6 +19,7 @@ class NewsFragment @Inject constructor() : WolmoFragment<BasePresenter<Any>>() {
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
     private lateinit var news: MutableList<News>
+    private var count: Int = 3
 
     override fun init() {
         val news = mutableListOf<News>()
@@ -30,29 +32,22 @@ class NewsFragment @Inject constructor() : WolmoFragment<BasePresenter<Any>>() {
         news.add(fakeNews1)
         news.add(fakeNews2)
         news.add(fakeNews3)
-        news.add(fakeNews)
-        news.add(fakeNews1)
-        news.add(fakeNews2)
-        news.add(fakeNews3)
-        news.add(fakeNews)
-        news.add(fakeNews1)
-        news.add(fakeNews2)
-        news.add(fakeNews3)
-        news.add(fakeNews)
-        news.add(fakeNews1)
-        news.add(fakeNews2)
-        news.add(fakeNews3)
-        news.add(fakeNews)
-        news.add(fakeNews1)
-        news.add(fakeNews2)
-        news.add(fakeNews3)
 
         viewManager = LinearLayoutManager(context)
         viewAdapter = RecyclerAdapter(news)
+        vSwipeRefreshLayout.setOnRefreshListener {
+            if (count>0) {
+                news.addAll(news)
+                viewAdapter.notifyDataSetChanged()
+                count--
+            } else {
+                Toast.makeText(context, getString(R.string.no_news), Toast.LENGTH_LONG).show()
+            }
+            vSwipeRefreshLayout.setRefreshing(false)
+        }
+
         mRecyclerView = news_recycler.apply {
-            // use this setting to improve performance if you know that changes
-                // in content do not change the layout size of the RecyclerView
-                setHasFixedSize(true)
+            setHasFixedSize(true)
 
             // use a linear layout manager
             layoutManager = viewManager

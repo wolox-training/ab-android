@@ -17,7 +17,7 @@
 
     <TextView
         android:id="@+id/vText_title"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/zero"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/spacing_large"
         android:layout_marginTop="@dimen/font_medium"
@@ -33,8 +33,8 @@
 
     <TextView
         android:id="@+id/vText_description"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/zero"
         android:layout_marginLeft="@dimen/spacing_large"
         android:ellipsize="end"
         android:maxLength="100"
@@ -54,7 +54,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/font_medium"
         android:layout_marginTop="@dimen/font_medium"
-        android:gravity="right"
         android:text="@string/_15_min"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -70,5 +69,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/vText_time"
         tools:ignore="MissingConstraints" />
+
+
 
 </android.support.constraint.ConstraintLayout>

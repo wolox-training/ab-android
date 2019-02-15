@@ -26,6 +26,19 @@ class RecyclerAdapter(private val news: MutableList<News>) :
         holder.row.vText_title.text = news[position].title
         holder.row.vText_description.text = news[position].text
         holder.row.vImageViewRow.setImageURI(news[position].picture)
+        holder.row.vlike.setOnClickListener {
+            if (news[position].isLike) {
+                it.setBackgroundResource(R.drawable.ic_like_off)
+                news[position].setLike(false)
+            } else {
+                it.setBackgroundResource(R.drawable.ic_like_on)
+                news[position].setLike(true)
+            }
+        }
+    }
+    public fun addMoreRows(newNews: MutableList<News>) {
+        news.addAll(newNews)
+        notifyDataSetChanged()
     }
 
     override fun getItemCount() = news.size

@@ -10,8 +10,7 @@ import javax.inject.Inject
  */
 class ProfileFragment @Inject constructor() : WolmoFragment<BasePresenter<Any>>() {
 
-    override fun init() {
-    }
+    override fun init() {}
 
-    override fun layout(): Int = ar.com.wolox.android.R.layout.profile_fragment_page
+    override fun layout(): Int = ar.com.wolox.android.R.layout.fragment_profile_page
 }

@@ -6,7 +6,7 @@ import android.widget.Toast
 import ar.com.wolox.android.R
 import ar.com.wolox.android.example.model.News
 import ar.com.wolox.wolmo.core.fragment.WolmoFragment
-import kotlinx.android.synthetic.main.news_fragment_page.*
+import kotlinx.android.synthetic.main.fragment_news_page.*
 import javax.inject.Inject
 
 /**
@@ -19,14 +19,10 @@ class NewsFragment @Inject constructor() : WolmoFragment<NewsPresenter>(), INews
     private lateinit var viewManager: RecyclerView.LayoutManager
     private lateinit var news: MutableList<News>
 
-    override fun layout(): Int = R.layout.news_fragment_page
+    override fun layout(): Int = R.layout.fragment_news_page
 
     override fun init() {
-        news = presenter.loadNews()
-
-        viewManager = LinearLayoutManager(context)
-        viewAdapter = RecyclerAdapter(news)
-            vSwipeRefreshLayout.setOnRefreshListener {
+        vSwipeRefreshLayout.setOnRefreshListener {
             presenter.refreshNews()
             vSwipeRefreshLayout.setRefreshing(false)
         }
@@ -38,12 +34,18 @@ class NewsFragment @Inject constructor() : WolmoFragment<NewsPresenter>(), INews
         }
     }
 
-    override fun addNews() {
-        news.addAll(news)
+    override fun addNews(addedNews: MutableList<News>) {
+        news.addAll(addedNews)
         viewAdapter.notifyDataSetChanged()
     }
 
+    override fun initializer() {
+        news = mutableListOf<News>()
+        viewManager = LinearLayoutManager(context)
+        viewAdapter = RecyclerAdapter(news)
+    }
+
     override fun noNews() {
-        Toast.makeText(context, getString(R.string.no_news), Toast.LENGTH_LONG).show()
+        Toast.makeText(context, getString(R.string.no_more_news_to_show), Toast.LENGTH_LONG).show()
     }
 }

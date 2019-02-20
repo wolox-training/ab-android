@@ -4,6 +4,7 @@ import android.support.annotation.Nullable;
 import android.util.Patterns;
 import java.util.List;
 import javax.inject.Inject;
+
 import ar.com.wolox.android.example.model.User;
 import ar.com.wolox.android.example.network.LoginService;
 import ar.com.wolox.wolmo.core.presenter.BasePresenter;

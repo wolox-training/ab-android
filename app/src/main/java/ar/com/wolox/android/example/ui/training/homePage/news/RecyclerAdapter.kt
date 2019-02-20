@@ -23,11 +23,11 @@ class RecyclerAdapter(private val news: MutableList<News>) :
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.row.vText_title.text = news[position].title
-        holder.row.vText_description.text = news[position].text
-        holder.row.vImageViewRow.setImageURI(news[position].picture)
+        holder.row.vText_title.text = news[position].getTitle()
+        holder.row.vText_description.text = news[position].getText()
+        holder.row.vImageViewRow.setImageURI(news[position].getPicture())
         holder.row.vlike.setOnClickListener {
-            if (news[position].isLike) {
+            if (news[position].isLike()) {
                 it.setBackgroundResource(R.drawable.ic_like_off)
                 news[position].setLike(false)
             } else {

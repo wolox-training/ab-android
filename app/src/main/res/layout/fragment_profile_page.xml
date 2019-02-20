@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <TextView
         android:id="@+id/mTitle"
         android:layout_width="wrap_content"
@@ -11,4 +12,5 @@
         android:layout_centerInParent="true"
         android:text="@string/profile_fragment"
         tools:ignore="MissingConstraints" />
+
 </android.support.constraint.ConstraintLayout>

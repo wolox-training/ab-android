@@ -22,9 +22,10 @@ class NewsFragment @Inject constructor() : WolmoFragment<NewsPresenter>(), INews
     override fun layout(): Int = R.layout.fragment_news_page
 
     override fun init() {
+        viewManager = LinearLayoutManager(context)
         vSwipeRefreshLayout.setOnRefreshListener {
-            presenter.refreshNews()
-            vSwipeRefreshLayout.setRefreshing(false)
+            presenter.onRefreshNews()
+            vSwipeRefreshLayout.isRefreshing = false
         }
 
         recyclerView = news_recycler.apply {
@@ -39,9 +40,9 @@ class NewsFragment @Inject constructor() : WolmoFragment<NewsPresenter>(), INews
         viewAdapter.notifyDataSetChanged()
     }
 
-    override fun initializer() {
+    override fun showNews(addedNews: MutableList<News>) {
         news = mutableListOf<News>()
-        viewManager = LinearLayoutManager(context)
+        news.addAll(addedNews)
         viewAdapter = RecyclerAdapter(news)
     }
 

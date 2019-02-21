@@ -85,27 +85,27 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
 
     @Override
     public void incompletePassword() {
-        mPasswordEditText.setError(getString(R.string.mandatory_fields));
+        mPasswordEditText.setError(getString(R.string.login_mandatory_fields));
     }
 
     @Override
     public void incompleteEmail() {
-        mEmailEditText.setError(getString(R.string.mandatory_fields));
+        mEmailEditText.setError(getString(R.string.login_mandatory_fields));
     }
 
     @Override
     public void incorrectEmail() {
-        mEmailEditText.setError(getString(R.string.example_email));
+        mEmailEditText.setError(getString(R.string.login_example_email));
     }
 
     @Override
     public void incorrectEmailPassword() {
-        Toast.makeText(getContext(), getString(R.string.incorrect_email_password), Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(), getString(R.string.login_incorrect_email_password), Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void notInternet() {
-        Toast.makeText(getActivity(), getString(R.string.no_internet), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), getString(R.string.login_no_internet), Toast.LENGTH_SHORT).show();
     }
 
     @Override

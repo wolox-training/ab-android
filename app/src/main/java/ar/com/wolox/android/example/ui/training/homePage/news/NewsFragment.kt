@@ -14,7 +14,7 @@ import javax.inject.Inject
  */
 class NewsFragment @Inject constructor() : WolmoFragment<NewsPresenter>(), INewsView {
 
-    private lateinit var mRecyclerView: RecyclerView
+    private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
     private lateinit var news: MutableList<News>
@@ -27,7 +27,7 @@ class NewsFragment @Inject constructor() : WolmoFragment<NewsPresenter>(), INews
             vSwipeRefreshLayout.setRefreshing(false)
         }
 
-        mRecyclerView = news_recycler.apply {
+        recyclerView = news_recycler.apply {
             setHasFixedSize(true)
             layoutManager = viewManager
             adapter = viewAdapter
@@ -46,6 +46,6 @@ class NewsFragment @Inject constructor() : WolmoFragment<NewsPresenter>(), INews
     }
 
     override fun noNews() {
-        Toast.makeText(context, getString(R.string.no_more_news_to_show), Toast.LENGTH_LONG).show()
+        Toast.makeText(context, getString(R.string.news_fragment_no_more_news_to_show), Toast.LENGTH_LONG).show()
     }
 }

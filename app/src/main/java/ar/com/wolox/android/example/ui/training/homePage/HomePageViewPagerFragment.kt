@@ -14,21 +14,21 @@ import ar.com.wolox.android.example.ui.training.homePage.news.NewsFragment
  */
 class HomePageViewPagerFragment @Inject constructor() : WolmoFragment<BasePresenter<Any>>() {
 
-    @Inject lateinit var mNewsFragment: NewsFragment
-    @Inject lateinit var mProfileFragment: ProfileFragment
-    private lateinit var mFragmentPagerAdapter: SimpleFragmentPagerAdapter
+    @Inject lateinit var newsFragment: NewsFragment
+    @Inject lateinit var profileFragment: ProfileFragment
+    private lateinit var fragmentPagerAdapter: SimpleFragmentPagerAdapter
 
     override fun layout(): Int = ar.com.wolox.android.R.layout.fragment_viewpager
 
     override fun init() {
 
-        mFragmentPagerAdapter = SimpleFragmentPagerAdapter(childFragmentManager)
-        mFragmentPagerAdapter.addFragments(
-                Pair(mNewsFragment, getString(R.string.news)),
-                Pair(mProfileFragment, getString(R.string.profile))
+        fragmentPagerAdapter = SimpleFragmentPagerAdapter(childFragmentManager)
+        fragmentPagerAdapter.addFragments(
+                Pair(newsFragment, getString(R.string.news)),
+                Pair(profileFragment, getString(R.string.homepage_profile))
         )
 
-        vViewPagerPager.adapter = mFragmentPagerAdapter
+        vViewPagerPager.adapter = fragmentPagerAdapter
         tabs.setupWithViewPager(vViewPagerPager)
         tabs.getTabAt(Companion.NEWS_FRAGMENT)?.setIcon(R.drawable.news_selector)
         tabs.getTabAt(Companion.PROFILE_FRAGMENT)?.setIcon(R.drawable.profile_selector)

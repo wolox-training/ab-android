@@ -6,11 +6,19 @@ package ar.com.wolox.android.example.ui.training.login;
 public interface ILoginView {
 
     void loginSuccesful();
+
     void incompletePassword();
+
     void incompleteEmail();
+
     void incorrectEmail();
+
     void incorrectEmailPassword();
+
     void notInternet();
+
     void showProgressBar();
+
     void hideProgressBar();
+
 }

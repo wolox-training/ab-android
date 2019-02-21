@@ -8,6 +8,8 @@ import ar.com.wolox.android.example.model.News
 interface INewsView {
 
     fun addNews(news: MutableList<News>)
+
     fun noNews()
+
     fun initializer()
 }

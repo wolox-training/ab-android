@@ -30,7 +30,7 @@
         app:layout_constraintRight_toLeftOf="@id/vText_time"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
-        tools:text="@string/title" />
+        tools:text="@string/Recycler_News_title" />
 
     <TextView
         android:id="@+id/vText_description"
@@ -47,7 +47,7 @@
         app:layout_constraintRight_toLeftOf="@id/vText_time"
         app:layout_constraintTop_toBottomOf="@id/vText_title"
         tools:ignore="MissingConstraints"
-        tools:text="@string/description" />
+        tools:text="@string/Recycler_News_description" />
 
     <TextView
         android:id="@+id/vText_time"
@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/font_medium"
         android:layout_marginTop="@dimen/font_medium"
-        android:text="@string/_15_min"
+        android:text="@string/Recycler_News_15_min"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />

@@ -7,7 +7,6 @@ import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.google.gson.FieldNamingPolicy;
 import com.readystatesoftware.chuck.ChuckInterceptor;
 import com.squareup.leakcanary.LeakCanary;
-
 import ar.com.wolox.android.BuildConfig;
 import ar.com.wolox.android.example.di.DaggerAppComponent;
 import ar.com.wolox.wolmo.core.WolmoApplication;
@@ -27,6 +26,7 @@ public class TrainingApplication extends WolmoApplication {
                 .setDownsampleEnabled(true)
                 .build();
         Fresco.initialize(this, config);
+
         if (LeakCanary.isInAnalyzerProcess(this)) {
             // This process is dedicated to LeakCanary for heap analysis.
             // You should not init your app in this process.

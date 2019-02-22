@@ -44,11 +44,15 @@
     <dimen name="font_large_extra">20sp</dimen>
     <dimen name="font_big">22sp</dimen>
     <dimen name="font_huge">24sp</dimen>
+
+
+    <!-- Add your custom dimens here -->
     <dimen name="image_view_height">180dp</dimen>
     <dimen name="view_height">60dp</dimen>
     <dimen name="margin">16dp</dimen>
     <dimen name="button_height">40dp</dimen>
+    <dimen name="icon_size">40dp</dimen>
     <dimen name="logo_mini">56dp</dimen>
+    <dimen name="recycler_height">88dp</dimen>
 
-    <!-- Add your custom dimens here -->
 </resources>

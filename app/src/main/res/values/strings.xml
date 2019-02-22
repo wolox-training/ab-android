@@ -12,25 +12,37 @@
     <string name="page_2_toolbar_title">Example Request</string>
     <string name="fragment_example_username">Username</string>
     <string name="fragment_example_login">Login</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="terms">By joining you agree to our <u>Terms &amp; Conditions</u></string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
+
+    <!-- Login -->
+    <string name="login_terms">By joining you agree to our <u>Terms &amp; Conditions</u></string>
+    <string name="login_email">Email</string>
+    <string name="login_password">Password</string>
+    <string name="login_mandatory_fields">All fields are mandatory</string>
+    <string name="login_example_email">Incorrect email format. A correct format is \'example@domain.com\'</string>
+    <string name="log_in">LOG IN</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="login_incorrect_email_password">The Email address or Password is incorrect</string>
+    <string name="login_no_internet">No internet connection</string>
+
+    <!-- Key -->
     <string name="key_email">key_email</string>
     <string name="key_password">key_password</string>
     <string name="key_login">key_login</string>
-    <string name="mandatory_fields">All fields are mandatory</string>
-    <string name="example_email">Incorrect email format. A correct format is \'example@domain.com\'</string>
-    <string name="log_in">LOG IN</string>
-    <string name="sign_up">SIGN UP</string>
+
+    <!-- Home Page -->
     <string name="home_page">Home Page</string>
-    <string name="incorrect_email_password">The Email address or Password is incorrect</string>
-    <string name="call_failure">Call Failure</string>
-    <string name="no_internet">No internet connection</string>
-    <string name="wolox">Wolox</string>
-    <string name="news_fragment">News Fragment</string>
-    <string name="profile_fragment">Profile Fragment</string>
-    <string name="frag_nexist">This fragment does not exist</string>
+    <string name="homepage_wolox">Wolox</string>
+    <string name="homepage_profile_fragment">Profile Fragment</string>
+    <string name="homepage_news_fragment">News Fragment</string>
+    <string name="homepage_profile">Profile</string>
+
+    <!-- Recycler News -->
+    <string name="Recycler_News_title">Title</string>
+    <string name="Recycler_News_description">Description</string>
+    <string name="Recycler_News_15_min">15 min</string>
+
+    <!-- News Fragment -->
+    <string name="news_fragment_no_more_news_to_show">No more news to show</string>
+    <string name="news">News</string>
 
 </resources>

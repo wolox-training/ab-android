@@ -124,6 +124,9 @@ dependencies {
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+    // prettytime
+    implementation "org.grails.plugins:grails-pretty-time:4.0.0"
+
     // Wolmo
     implementation "com.github.wolox:wolmo-networking-android:$wolmo_version"
 

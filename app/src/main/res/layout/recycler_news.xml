@@ -2,7 +2,7 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/recycler_height">
 
@@ -11,6 +11,11 @@
         android:layout_width="@dimen/icon_size"
         android:layout_height="@dimen/icon_size"
         android:layout_marginLeft="@dimen/spacing_large"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:fadeDuration="500"
+        fresco:failureImageScaleType="center"
+        fresco:placeholderImageScaleType="centerCrop"
+        fresco:progressBarAutoRotateInterval="1000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -54,8 +59,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/font_medium"
+        android:layout_marginRight="@dimen/font_medium"
         android:layout_marginTop="@dimen/font_medium"
-        android:text="@string/Recycler_News_15_min"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />

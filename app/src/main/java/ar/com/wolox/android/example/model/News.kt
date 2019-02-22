@@ -1,3 +1,6 @@
 package ar.com.wolox.android.example.model
 
-data class News(val title: String, val text: String, val picture: String, var like: Boolean = false)
+import com.google.gson.annotations.SerializedName
+import java.io.Serializable
+
+data class News(@SerializedName("createdAt") val createdAt: String, val title: String, val text: String, val picture: String, var like: Boolean = false) : Serializable

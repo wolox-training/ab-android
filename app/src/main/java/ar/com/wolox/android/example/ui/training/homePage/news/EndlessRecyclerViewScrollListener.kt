@@ -17,16 +17,6 @@ abstract class EndlessRecyclerViewScrollListener(private var visibleThreshold: I
         this.mLayoutManager = layoutManager
     }
 
-    constructor(visibleThreshold: Int, layoutManager: GridLayoutManager): this(visibleThreshold) {
-        this.mLayoutManager = layoutManager
-        this.visibleThreshold = visibleThreshold * layoutManager.spanCount
-    }
-
-    constructor(visibleThreshold: Int, layoutManager: StaggeredGridLayoutManager): this(visibleThreshold) {
-        this.mLayoutManager = layoutManager
-        this.visibleThreshold = visibleThreshold * layoutManager.spanCount
-    }
-
     fun getLastVisibleItem(lastVisibleItemPositions: IntArray): Int {
         var maxSize = 0
         for (i in lastVisibleItemPositions.indices) {

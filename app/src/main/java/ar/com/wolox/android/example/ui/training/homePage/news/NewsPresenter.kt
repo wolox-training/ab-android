@@ -19,7 +19,8 @@ class NewsPresenter @Inject constructor(private val retrofitServices: RetrofitSe
         super.onViewAttached()
         loadNews()
     }
-    fun loadNews(): MutableList<News> {
+
+    fun loadNews() {
         news = mutableListOf<News>()
         retrofitServices.getService(NewsService::class.java).getNews().enqueue(
                 networkCallback {
@@ -33,8 +34,6 @@ class NewsPresenter @Inject constructor(private val retrofitServices: RetrofitSe
                     onCallFailure { runIfViewAttached(Runnable { view.showError() }) }
                 }
         )
-
-        return news
     }
 
     fun loadPagedNews() {

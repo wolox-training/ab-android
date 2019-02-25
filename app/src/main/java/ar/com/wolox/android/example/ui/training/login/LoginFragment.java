@@ -117,5 +117,4 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
     public void hideProgressBar() {
         mProgressBar.setVisibility(getView().GONE);
     }
-
 }

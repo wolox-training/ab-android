@@ -12,4 +12,6 @@ interface INewsView {
     fun noNews()
 
     fun showNews(addedNews: MutableList<News>)
+
+    fun showError()
 }
